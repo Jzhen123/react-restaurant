@@ -1,7 +1,7 @@
 function SectionItem(props) {
 
     return (
-        <li>
+        <li className="list-group-item ps-4">
             {props.sectionItem.name}
         </li>
     )

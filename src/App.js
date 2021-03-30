@@ -10,40 +10,49 @@ class App extends React.Component {
       {
         menuID: 1,
         name: 'Breakfast',
+        numOfItems: 8,
+      }, {
+        menuID: 3,
+        name: 'Lunch',
+        numOfItems: 8,
+      }, {
+        menuID: 4,
+        name: 'Appetizers',
+        numOfItems: 6,
       }
-      // , {
-      //   menuID: 3,
-      //   name: 'Lunch',
-      // }, {
-      //   menuID: 4,
-      //   name: 'Appetizers',
-      // }
-      // , {
-      //   menuID: 5,
-      //   name: 'dinner',
-      // }, {
-      //   menuID: 6,
-      //   name: 'sides',
-      // }, {
-      //   menuID: 7,
-      //   name: 'desserts',
-      // }, {
-      //   menuID: 8,
-      //   name: 'drinks',
-      // }
+      , {
+        menuID: 5,
+        name: 'Dinner',
+        numOfItems: 12,
+      }, {
+        menuID: 6,
+        name: 'Sides',
+        numOfItems: 8,
+      }, {
+        menuID: 7,
+        name: 'Desserts',
+        numOfItems: 4,
+      }
     ]
   }
 
   render() {
     return (
       <>
-        {
-          this.menu.map((item, index) => {
-            return (
-              <MenuSection key={index} menuSection={item} />
-            )
-          })
-        }
+        <div className="card m-5 p-3 text-center">
+          <h1 className="p-3">Restaurant Name</h1>
+          <h3>Address</h3>
+          <h3>Hours</h3>
+          <div className="accordion" id="accordionExample">
+            {
+              this.menu.map((item, index) => {
+                return (
+                  <MenuSection key={index} menuSection={item} />
+                )
+              })
+            }
+          </div>
+        </div>
       </>
     )
   }

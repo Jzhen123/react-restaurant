@@ -1,44 +1,50 @@
-import axios from 'axios';
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import MenuSection from './MenuSection';
 
 class App extends React.Component {
+
   constructor(props) {
     super(props);
-    this.state = {
-      sections: {
-         breakfast: { food : "eggs"},
-         lunch: {},
-         appetizers: {},
-         dinner: {},
-         sides: {},
-         desserts: {},
-         drinks: {},
+    this.menu = [
+      {
+        menuID: 1,
+        name: 'Breakfast',
+      }, {
+        menuID: 3,
+        name: 'Lunch',
+      }, {
+        menuID: 4,
+        name: 'Appetizers',
       }
-    };
+      // , {
+      //   menuID: 5,
+      //   name: 'dinner',
+      // }, {
+      //   menuID: 6,
+      //   name: 'sides',
+      // }, {
+      //   menuID: 7,
+      //   name: 'desserts',
+      // }, {
+      //   menuID: 8,
+      //   name: 'drinks',
+      // }
+    ]
   }
-  
-  componentDidMount() {
-    // axios.get('http://awesomeincbootcampapi-ianrios529550.codeanyapp.com:3000/public/api/menu/type/5')
-    // .then((response) => {this.setState({ data: response.data })}) 
-    console.log(Object.keys(this.state.sections))
 
-    // for (let i = 0)
-
-  }
-
-  
-  
   render() {
     return (
-      "Hi"
-      // <ul>
-      //     {this.state.data.map(item => (
-      //       <li key={item.id}>
-      //         {item.name}
-      //       </li>
-      //     ))}
-      //   </ul>
+      <>
+        {
+          this.menu.map((item, index) => {
+            return (
+              <MenuSection key={index} menuSection={item} />
+            )
+          })
+        }
+      </>
     )
   }
 }

@@ -25,7 +25,7 @@ class MenuSection extends React.Component {
 
     return (
       <>
-        <div className="card text-center">
+        <div className="card m-5">
           <div className="card-header">
             {this.menuSection.name}
           </div>

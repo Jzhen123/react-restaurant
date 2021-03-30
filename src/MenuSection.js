@@ -14,39 +14,41 @@ class MenuSection extends React.Component {
   componentDidMount() {
     // Uses Ian's API to set each sections data array to the API call of 10 random items of a certain id
     if (this.menuSection.numOfItems > 10) {
-      let numOfCalls = Math.ceil(this.menuSection.numOfItems / 10)
-
-      axios.get(`http://awesomeincbootcampapi-ianrios529550.codeanyapp.com:3000/public/api/menu/type/${this.menuSection.menuID}`)
-        .then((response) => this.setState({ sectionItems: response.data })
-        )
-
-      for (let i = 0; i < numOfCalls - 1; i++) {
-        axios.get(`http://awesomeincbootcampapi-ianrios529550.codeanyapp.com:3000/public/api/menu/type/${this.menuSection.menuID}`)
-          .then((response) => this.setState({ sectionItems: this.state.sectionItems.concat(response.data) })
-          )
-      }
-
-
-
-
-
+      this.moreThanTen();
     } else {
       axios.get(`http://awesomeincbootcampapi-ianrios529550.codeanyapp.com:3000/public/api/menu/type/${this.menuSection.menuID}`)
-        .then((response) => this.setState({ sectionItems: response.data })
-        )
+        .then((response) => this.setState({ sectionItems: response.data }))
     }
-
-
   }
+
+  moreThanTen() {
+    let numOfCalls = Math.ceil(this.menuSection.numOfItems / 10)
+    axios.get(`http://awesomeincbootcampapi-ianrios529550.codeanyapp.com:3000/public/api/menu/type/${this.menuSection.menuID}`)
+      .then((response) => this.setState({ sectionItems: response.data }))
+    for (let i = 0; i < numOfCalls - 1; i++) {
+      axios.get(`http://awesomeincbootcampapi-ianrios529550.codeanyapp.com:3000/public/api/menu/type/${this.menuSection.menuID}`)
+        .then((response) => this.setState({ sectionItems: this.state.sectionItems.concat(response.data) }))
+    }
+  }
+
+  getUniqueItems(){
+    let key = 'name'
+    let unique = [...new Map(this.state.sectionItems.map(item => [item[key], item])).values()];
+    unique = unique.slice(this.state.sectionItems.length - this.menuSection.numOfItems)
+    console.log(unique)
+  }
+
+
+
 
   render() {
     if (this.state.sectionItems.length < 1) {
       return null
     }
-
+    this.getUniqueItems()
     return (
       <>
-        {console.log(this.state.sectionItems)}
+        {/* {console.log(this.state.sectionItems)} */}
         <div className="accordion-item">
           <h2 className="accordion-header" id={this.menuSection.menuID}>
             <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={`#${this.menuSection.name}`} aria-expanded="true" aria-controls={this.menuSection.name}>

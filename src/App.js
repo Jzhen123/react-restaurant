@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import MenuSection from './MenuSection';
 
@@ -11,13 +10,14 @@ class App extends React.Component {
       {
         menuID: 1,
         name: 'Breakfast',
-      }, {
-        menuID: 3,
-        name: 'Lunch',
-      }, {
-        menuID: 4,
-        name: 'Appetizers',
       }
+      // , {
+      //   menuID: 3,
+      //   name: 'Lunch',
+      // }, {
+      //   menuID: 4,
+      //   name: 'Appetizers',
+      // }
       // , {
       //   menuID: 5,
       //   name: 'dinner',

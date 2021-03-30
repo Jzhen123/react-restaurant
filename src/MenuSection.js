@@ -25,19 +25,17 @@ class MenuSection extends React.Component {
 
     return (
       <>
-        <div className="card m-5">
-          <div className="card-header">
-            {this.menuSection.name}
-          </div>
-          <div className="card-body">
-          {
-            this.state.sectionItems.map((item, index) => {
+      <div class="card text-center m-5">
+        <div class="card-header">
+          {this.menuSection.name}
+        </div>
+        {
+          this.state.sectionItems.map((item, index) => {
             return (
               <SectionItem key={index} sectionItem={item} />
             )
           })
-          }
-          </div>
+        }
         </div>
       </>
     )

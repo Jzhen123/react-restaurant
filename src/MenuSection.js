@@ -32,6 +32,7 @@ class MenuSection extends React.Component {
     }
     return (
       <>
+      {console.log(this.state.sectionItems)}
         <div className="accordion-item">
           <h2 className="accordion-header" id={this.menuSection.menuID}>
             <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={`#${this.menuSection.name}`} aria-expanded="true" aria-controls={this.menuSection.name}>

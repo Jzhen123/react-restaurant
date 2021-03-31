@@ -33,7 +33,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <div className="card m-5 p-3 text-center">
+        <div className="card m-5 p-3 text-center border border- border-5">
           <h1 className="p-3">Restaurant Name</h1>
           <h3>Address</h3>
           <h3>Hours</h3>

@@ -10,28 +10,22 @@ class App extends React.Component {
       {
         menuID: 1,
         name: 'Breakfast',
-        numOfItems: 8,
       }, {
         menuID: 3,
         name: 'Lunch',
-        numOfItems: 8,
       }, {
         menuID: 4,
         name: 'Appetizers',
-        numOfItems: 6,
       }
       , {
         menuID: 5,
         name: 'Dinner',
-        numOfItems: 12,
       }, {
         menuID: 6,
         name: 'Sides',
-        numOfItems: 8,
       }, {
         menuID: 7,
         name: 'Desserts',
-        numOfItems: 4,
       }
     ]
   }

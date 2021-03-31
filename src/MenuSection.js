@@ -9,6 +9,7 @@ class MenuSection extends React.Component {
     this.state = {
       sectionItems: []
     }
+    console.log('dude')
   }
 
   componentDidMount() {
@@ -18,10 +19,11 @@ class MenuSection extends React.Component {
     } else {
       axios.get(`http://awesomeincbootcampapi-ianrios529550.codeanyapp.com:3000/public/api/menu/type/${this.menuSection.menuID}`)
         .then((response) => this.setState({ sectionItems: response.data }))
+        
     }
   }
 
-  moreThanTen() {
+  moreThanTen() { 
     let numOfCalls = Math.ceil(this.menuSection.numOfItems / 10)
     axios.get(`http://awesomeincbootcampapi-ianrios529550.codeanyapp.com:3000/public/api/menu/type/${this.menuSection.menuID}`)
       .then((response) => this.setState({ sectionItems: response.data }))
@@ -29,6 +31,7 @@ class MenuSection extends React.Component {
       axios.get(`http://awesomeincbootcampapi-ianrios529550.codeanyapp.com:3000/public/api/menu/type/${this.menuSection.menuID}`)
         .then((response) => this.setState({ sectionItems: this.state.sectionItems.concat(response.data) }))
     }
+    console.log("Hi")
   }
 
   getUniqueItems(){
@@ -43,12 +46,12 @@ class MenuSection extends React.Component {
 
   render() {
     if (this.state.sectionItems.length < 1) {
+      console.log("Yo")
       return null
     }
-    this.getUniqueItems()
     return (
       <>
-        {/* {console.log(this.state.sectionItems)} */}
+        {console.log(this.state.sectionItems)}
         <div className="accordion-item">
           <h2 className="accordion-header" id={this.menuSection.menuID}>
             <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={`#${this.menuSection.name}`} aria-expanded="true" aria-controls={this.menuSection.name}>

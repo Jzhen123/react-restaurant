@@ -1,4 +1,19 @@
 body {
-    background-color: rgb(247, 216, 177);
+ background-color: rgb(255, 255, 255);
 }
+
+h1 {
+    font-size: 100px;
+    font-family: fantasy;
+    font-weight: 500;
+}
+h3 {
+    font-style: italic;
+    font-family: fantasy;
+}
+
+#Background {
+    background-color:  rgba(235, 225, 214, 0.842);
+}
+
 

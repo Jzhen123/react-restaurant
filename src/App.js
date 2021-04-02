@@ -6,7 +6,7 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.menu = [
+    this.menu = [ // The Menu Sections that are currently displayed. Just need to add ID and Name to add new section
       {
         menuID: 1,
         name: 'Breakfast',
@@ -30,12 +30,14 @@ class App extends React.Component {
     ]
   }
 
+  // Rendering Menu Details and Accordion parent
   render() {
     return (
       <>
         <div id="Background" className="card mx-auto p-3 text-center border border-dark">
           <h1 className="pt-3">Le Ian's</h1>
-          <h3 className="pb-3">Mon-Fri: 09:30 - 20:30 &nbsp;&nbsp;&nbsp; Sat-Sun: 11:30 - 20:30</h3>
+          <h3>Mon-Fri: 09:30 - 20:30 &nbsp;&nbsp;&nbsp; Sat-Sun: 11:30 - 20:30</h3>
+          <h3 className="pb-3">Avenue de Awesome Inc, Paris, France</h3>
 
           <div className="accordion" id="accordionExample">
             {
@@ -45,8 +47,7 @@ class App extends React.Component {
                 )
               })
             }
-            <h3 className="pt-4">Avenue de Awesome Inc, Paris, France</h3>
-            <h3>Menu prices based on if we need more money</h3>
+            <h3 className="pt-4">Menu prices based on if we need more money</h3>
           </div>
         </div>
       </>

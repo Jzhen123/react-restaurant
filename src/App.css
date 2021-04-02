@@ -1,0 +1,25 @@
+body {
+ background-color: rgb(255, 255, 255);
+}
+
+h1 {
+    font-size: 100px;
+    font-family: fantasy;
+    font-weight: 500;
+}
+h3 {
+    font-style: italic;
+    font-family: fantasy;
+}
+#text{
+    font-weight: 800;
+    font-style: italic;
+    font-family: fantasy;
+}
+#Background {
+    background-color:  rgba(235, 225, 214, 0.842);
+    margin: 50px;
+    width: 70%;
+}
+
+

@@ -10,6 +10,10 @@ class App extends React.Component {
       {
         menuID: 1,
         name: 'Breakfast',
+      },
+      {
+        menuID: 2,
+        name: 'Snacks',
       }, {
         menuID: 3,
         name: 'Lunch',
@@ -40,13 +44,11 @@ class App extends React.Component {
           <h3 className="pb-3">Avenue de Awesome Inc, Paris, France</h3>
 
           <div className="accordion" id="accordionExample">
-            {
-              this.menu.map((item, index) => {
+            {this.menu.map((item, index) => {
                 return (
                   <MenuSection key={index} menuSection={item} />
                 )
-              })
-            }
+              })}
             <h3 className="pt-4">Menu prices based on if we need more money</h3>
           </div>
         </div>

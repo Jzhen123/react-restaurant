@@ -11,14 +11,14 @@ class MenuSection extends React.Component {
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     // Uses Ian's API to set each sections data array to the API call of 10 random items of a certain id
     if (this.menuSection.name === 'Dinner') { // Using two API calls and concatting them to get the atleast 12 unique items for Dinner
-      this.axiosHelper();
-      axios.get(`http://awesomeincbootcampapi-ianrios529550.codeanyapp.com:3000/public/api/menu/type/${this.menuSection.menuID}`)
+      await this.axiosHelper();
+      await axios.get(`http://awesomeincbootcampapi-ianrios529550.codeanyapp.com:3000/public/api/menu/type/${this.menuSection.menuID}`)
         .then((response) => this.setState({ sectionItems: this.state.sectionItems.concat(response.data) }))
     } else {
-      this.axiosHelper();
+      await this.axiosHelper();
     }
   }
 
